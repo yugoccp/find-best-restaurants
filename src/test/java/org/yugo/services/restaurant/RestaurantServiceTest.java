@@ -14,7 +14,7 @@ public class RestaurantServiceTest {
     @BeforeEach
     public void init() {
         restaurantRepository = mock(RestaurantRepository.class);
-        when(restaurantRepository.getAllRestaurants()).thenReturn(RestaurantServiceMockData.getRestaurantMockData());
+        when(restaurantRepository.getAll()).thenReturn(RestaurantServiceMockData.getRestaurantMockData());
 
         restaurantService = new RestaurantService(restaurantRepository);
     }

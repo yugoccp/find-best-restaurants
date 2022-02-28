@@ -15,7 +15,7 @@ public class RestaurantRepositoryTest {
 
     @Test
     public void When_GetAllRestaurants_Should_ReturnValidList() {
-        var result = restaurantRepository.getAllRestaurants();
+        var result = restaurantRepository.getAll();
 
         Assertions.assertTrue(result.size() > 0);
         
