@@ -1,8 +1,10 @@
 package org.yugo.services.restaurant;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 public class RestaurantServiceMockData {
 
@@ -15,6 +17,8 @@ public class RestaurantServiceMockData {
         mockedRestaurants.add(new Restaurant("name_2_EEE", 5, 10, 20, "cuisineCCC"));
         mockedRestaurants.add(new Restaurant("name_2_FFF", 5, 10, 30, "cuisineCCC"));
 
+        Collections.shuffle(mockedRestaurants, new Random(0));
+        
         return mockedRestaurants;
     }
 

@@ -95,7 +95,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ContainsName() {
+    public void When_FindMatches_Should_ContainsName() {
         var match = RestaurantServiceMockData.getMatchParameter();
 
         var result = restaurantService.findBestRestaurant(match);
@@ -107,7 +107,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ReturnExactOrPartialhName() {
+    public void When_FindMatches_Should_ReturnExactOrPartialhName() {
         var match = RestaurantServiceMockData.getMatchParameter();
         var searchName = match.getName().get();
 
@@ -122,7 +122,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ReturnEqualOrMoreThanCustomerRating() {
+    public void When_FindMatches_Should_ReturnEqualOrMoreThanCustomerRating() {
         var match = RestaurantServiceMockData.getMatchParameter();
         var searchCustomerRating = match.getCustomerRating().get();
 
@@ -136,7 +136,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ReturnEqualOrLessThanPrice() {
+    public void When_FindMatches_Should_ReturnEqualOrLessThanPrice() {
         var match = RestaurantServiceMockData.getMatchParameter();
         var searchPrice = match.getPrice().get();
 
@@ -150,7 +150,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ReturnEqualOrLessThanDistance() {
+    public void When_FindMatches_Should_ReturnEqualOrLessThanDistance() {
         var match = RestaurantServiceMockData.getMatchParameter();
         var searchDistance = match.getDistance().get();
 
@@ -164,7 +164,7 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void When_Match_Should_ReturnExactOrPartialCuisine() {
+    public void When_FindMatches_Should_ReturnExactOrPartialCuisine() {
         var match = RestaurantServiceMockData.getMatchParameter();
         var searchCuisine = match.getCuisine().get();
 
