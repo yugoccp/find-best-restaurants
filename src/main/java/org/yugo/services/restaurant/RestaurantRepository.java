@@ -3,11 +3,14 @@ package org.yugo.services.restaurant;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.inject.Singleton;
+
 import org.yugo.utils.CsvUtils;
 
+@Singleton
 public class RestaurantRepository {
 
-    public List<Restaurant> getAllRestaurants() {
+    public List<Restaurant> getAll() {
         var cuisineData = getCuisineData();
         var restaurantData = getRestaurantData(cuisineData);
 

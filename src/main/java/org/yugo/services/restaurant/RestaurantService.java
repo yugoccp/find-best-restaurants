@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class RestaurantService {
 
     private RestaurantRepository restaurantRepository;
@@ -14,6 +17,10 @@ public class RestaurantService {
         this.restaurantRepository = restaurantRepository;
         this.restaurantSearchParameterValidator = new RestaurantSearchParameterValidator();
         this.restaurantComparator = new RestaurantComparator();
+    }
+
+    public List<Restaurant> getAll() {
+        return restaurantRepository.getAll();
     }
 
     /**
@@ -33,7 +40,7 @@ public class RestaurantService {
 
         restaurantSearchParameterValidator.validate(searchParameter);
 
-        Stream<Restaurant> restaurantStream = restaurantRepository.getAllRestaurants().stream();
+        Stream<Restaurant> restaurantStream = restaurantRepository.getAll().stream();
 
         if(searchParameter.getName().isPresent()) {
             var searchName = searchParameter.getName().get().toLowerCase();
