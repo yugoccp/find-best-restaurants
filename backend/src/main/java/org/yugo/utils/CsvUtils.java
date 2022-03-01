@@ -10,15 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import javax.inject.Singleton;
-
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
-@Singleton
 public class CsvUtils {
 
-    public <T> List<T> parseCsvData(List<String[]> csvData, BiFunction<Map<String, Integer>, String[], T> csvRowParser) {
+    public static <T> List<T> parseCsvData(List<String[]> csvData, BiFunction<Map<String, Integer>, String[], T> csvRowParser) {
         var data = new ArrayList<T>();
 
         if (csvData.size() == 0) {
@@ -40,10 +37,10 @@ public class CsvUtils {
         return data;
     }
 
-    public List<String[]> getCsvData(String filePath) {
+    public static List<String[]> getCsvData(String filePath) {
         List<String[]> csvData = Collections.emptyList();
     
-        var inputStreamReader = new InputStreamReader(getClass().getResourceAsStream(filePath));
+        var inputStreamReader = new InputStreamReader(CsvUtils.class.getClassLoader().getResourceAsStream(filePath));
         var bufferedReader = new BufferedReader(inputStreamReader);
 
         try (CSVReader csvReader = new CSVReader(bufferedReader)) {

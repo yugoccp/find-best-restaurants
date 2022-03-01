@@ -3,7 +3,6 @@ package org.yugo.services.restaurant;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.yugo.utils.CsvUtils;
 
 public class RestaurantRepositoryTest {
 
@@ -11,7 +10,7 @@ public class RestaurantRepositoryTest {
 
     @BeforeEach
     public void init() {
-        restaurantRepository = new RestaurantRepository(new CsvUtils());
+        restaurantRepository = new RestaurantRepository();
     }
 
     @Test
