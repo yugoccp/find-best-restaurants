@@ -109,7 +109,7 @@ public class RestaurantServiceTest {
     @Test
     public void When_FindMatches_Should_ReturnExactOrPartialhName() {
         var match = RestaurantServiceMockData.getMatchParameter();
-        var searchName = match.getName().get();
+        var searchName = match.getName();
 
         var result = restaurantService.findBestRestaurant(match);
 
@@ -124,7 +124,7 @@ public class RestaurantServiceTest {
     @Test
     public void When_FindMatches_Should_ReturnEqualOrMoreThanCustomerRating() {
         var match = RestaurantServiceMockData.getMatchParameter();
-        var searchCustomerRating = match.getCustomerRating().get();
+        var searchCustomerRating = match.getCustomerRating();
 
         var result = restaurantService.findBestRestaurant(match);
 
@@ -138,7 +138,7 @@ public class RestaurantServiceTest {
     @Test
     public void When_FindMatches_Should_ReturnEqualOrLessThanPrice() {
         var match = RestaurantServiceMockData.getMatchParameter();
-        var searchPrice = match.getPrice().get();
+        var searchPrice = match.getPrice();
 
         var result = restaurantService.findBestRestaurant(match);
 
@@ -152,7 +152,7 @@ public class RestaurantServiceTest {
     @Test
     public void When_FindMatches_Should_ReturnEqualOrLessThanDistance() {
         var match = RestaurantServiceMockData.getMatchParameter();
-        var searchDistance = match.getDistance().get();
+        var searchDistance = match.getDistance();
 
         var result = restaurantService.findBestRestaurant(match);
 
@@ -166,7 +166,7 @@ public class RestaurantServiceTest {
     @Test
     public void When_FindMatches_Should_ReturnExactOrPartialCuisine() {
         var match = RestaurantServiceMockData.getMatchParameter();
-        var searchCuisine = match.getCuisine().get();
+        var searchCuisine = match.getCuisine();
 
         var result = restaurantService.findBestRestaurant(match);
 

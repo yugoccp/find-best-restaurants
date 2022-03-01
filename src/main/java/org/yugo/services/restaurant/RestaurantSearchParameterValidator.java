@@ -12,22 +12,22 @@ public class RestaurantSearchParameterValidator {
      * @throws IllegalArgumentException if one of the values are invalid
     */
     public void validate(RestaurantSearchParameter restaurantSearchParameter) throws IllegalArgumentException {
-        if (restaurantSearchParameter.getCustomerRating().isPresent()) {
-            var customerRating = restaurantSearchParameter.getCustomerRating().get();
+        var customerRating = restaurantSearchParameter.getCustomerRating();
+        if (customerRating != null) {            
             if (customerRating < 1 || customerRating > 5) {
                 throw new IllegalArgumentException("Invalid Customer Rating value, please provide values between 1 star to 5 stars");
             }
         };
 
-        if (restaurantSearchParameter.getDistance().isPresent()) {
-            var distance = restaurantSearchParameter.getDistance().get();
+        var distance = restaurantSearchParameter.getDistance();
+        if (distance != null) {
             if (distance < 1 || distance > 10) {
                 throw new IllegalArgumentException("Invalid Distance value, please provide values between 1 mile and 10 miles");
             }
         };
 
-        if (restaurantSearchParameter.getPrice().isPresent()) {
-            var price = restaurantSearchParameter.getPrice().get();
+        var price = restaurantSearchParameter.getPrice();
+        if (price != null) {
             if (price < 10 || price > 50) {
                 throw new IllegalArgumentException("Invalid Price value, please provide values between $10 and $50");
             }

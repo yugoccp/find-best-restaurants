@@ -1,20 +1,20 @@
 package org.yugo.services.restaurant;
 
-import java.util.Optional;
-
 public class RestaurantSearchParameter {
-    private final Optional<String> name;
-    private final Optional<Integer> customerRating;
-    private final Optional<Integer> distance;
-    private final Optional<Integer> price;
-    private final Optional<String> cuisine;
+    private String name;
+    private Integer customerRating;
+    private Integer distance;
+    private Integer price;
+    private String cuisine;
+
+    public RestaurantSearchParameter() {}
 
     public RestaurantSearchParameter(
-        Optional<String> name,
-        Optional<Integer> customerRating,
-        Optional<Integer> distance,
-        Optional<Integer> price,
-        Optional<String> cuisine
+        String name,
+        Integer customerRating,
+        Integer distance,
+        Integer price,
+        String cuisine
     ) {
         this.name = name;
         this.customerRating = customerRating;
@@ -23,23 +23,23 @@ public class RestaurantSearchParameter {
         this.cuisine = cuisine;
     }
 
-    public Optional<String> getName() {
+    public String getName() {
         return name;
     }
 
-    public Optional<Integer> getCustomerRating() {
+    public Integer getCustomerRating() {
         return customerRating;
     }
 
-    public Optional<Integer> getDistance() {
+    public Integer getDistance() {
         return distance;
     }
 
-    public Optional<Integer> getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public Optional<String> getCuisine() {
+    public String getCuisine() {
         return cuisine;
     }
 

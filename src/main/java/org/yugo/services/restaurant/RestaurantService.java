@@ -42,28 +42,28 @@ public class RestaurantService {
 
         Stream<Restaurant> restaurantStream = restaurantRepository.getAll().stream();
 
-        if(searchParameter.getName().isPresent()) {
-            var searchName = searchParameter.getName().get().toLowerCase();
+        if(searchParameter.getName() != null) {
+            var searchName = searchParameter.getName().toLowerCase();
             restaurantStream = restaurantStream.filter(restaurant -> restaurant.getName().toLowerCase().contains(searchName));
         }
 
-        if(searchParameter.getCustomerRating().isPresent()) {
-            var searchCustomerRating = searchParameter.getCustomerRating().get();
+        if(searchParameter.getCustomerRating() != null) {
+            var searchCustomerRating = searchParameter.getCustomerRating();
             restaurantStream = restaurantStream.filter(restaurant -> restaurant.getCustomerRating() >= searchCustomerRating);
         }
 
-        if(searchParameter.getDistance().isPresent()) {
-            var searchDistance = searchParameter.getDistance().get();
+        if(searchParameter.getDistance() != null) {
+            var searchDistance = searchParameter.getDistance();
             restaurantStream = restaurantStream.filter(restaurant -> restaurant.getDistance() <= searchDistance);
         }
 
-        if(searchParameter.getPrice().isPresent()) {
-            var searchPrice = searchParameter.getPrice().get();
+        if(searchParameter.getPrice() != null) {
+            var searchPrice = searchParameter.getPrice();
             restaurantStream = restaurantStream.filter(restaurant -> restaurant.getPrice() <= searchPrice);
         }
 
-        if(searchParameter.getCuisine().isPresent()) {
-            var searcCuisine = searchParameter.getCuisine().get().toLowerCase();
+        if(searchParameter.getCuisine() != null) {
+            var searcCuisine = searchParameter.getCuisine().toLowerCase();
             restaurantStream = restaurantStream.filter(restaurant -> restaurant.getCuisine().toLowerCase().contains(searcCuisine));
         }
 

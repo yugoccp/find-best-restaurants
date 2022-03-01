@@ -3,7 +3,6 @@ package org.yugo.services.restaurant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 public class RestaurantServiceMockData {
@@ -24,64 +23,64 @@ public class RestaurantServiceMockData {
 
     public static RestaurantSearchParameter getInvalidCustomerRatingParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(99), 
-            Optional.of(10), 
-            Optional.of(10), 
-            Optional.of("cuisine"));
+            "name", 
+            99, 
+            10, 
+            10, 
+            "cuisine");
     }
         
     public static RestaurantSearchParameter getInvalidPriceParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(5), 
-            Optional.of(10), 
-            Optional.of(0), 
-            Optional.of("cuisine"));
+            "name", 
+            5, 
+            10, 
+            0, 
+            "cuisine");
     }
 
     public static RestaurantSearchParameter getInvalidDistanceParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(5), 
-            Optional.of(0), 
-            Optional.of(10), 
-            Optional.of("cuisine"));
+            "name", 
+            5, 
+            0, 
+            10, 
+            "cuisine");
     }
 
     public static RestaurantSearchParameter getNoMatchParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("undefined"), 
-            Optional.of(5), 
-            Optional.of(10), 
-            Optional.of(10), 
-            Optional.of("cuisine"));
+            "undefined", 
+            5, 
+            10, 
+            10, 
+            "cuisine");
     }
 
     public static RestaurantSearchParameter getLessThan5MatchesParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(3), 
-            Optional.of(10), 
-            Optional.of(20), 
-            Optional.of("cuisineBBB"));
+            "name", 
+            3, 
+            10, 
+            20, 
+            "cuisineBBB");
     }
 
     public static RestaurantSearchParameter getMoreThan5MatchesParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(1), 
-            Optional.of(10), 
-            Optional.of(30), 
-            Optional.of("cuisine"));
+            "name", 
+            1, 
+            10, 
+            30, 
+            "cuisine");
     }
 
     public static RestaurantSearchParameter getMatchParameter() {
         return new RestaurantSearchParameter(
-            Optional.of("name"), 
-            Optional.of(2), 
-            Optional.of(10), 
-            Optional.of(20), 
-            Optional.of("cuisine"));
+            "name", 
+            2, 
+            10, 
+            20, 
+            "cuisine");
     }    
 }
