@@ -24,7 +24,7 @@ You have data about local restaurants located near your company, which you can f
      - Example: if the input is Customer Rating = 3 and Price = 15. Mcdonald’s is 4 stars with an average spend = $10, and it is 1 mile away. And KFC is 3 stars with an average spend = $8, and it is 1 mile away. Then we should consider Mcdonald’s as a better match than KFC. (They both matches the search criteria -> we compare distance -> we get a tie -> we then compare customer rating -> Mcdonald’s wins)
 5. The final submitted work should include a README file. No UI is required in this assessment, but you may implement one if you would like. **The steps to run and test your program should be clearly introduced in the README file.** If you have made any additional **Assumptions** besides what we have listed above while working on this assessment, please document them so that we can better understand your solution.
 
-## Technology stack
+## Technology Stack
 
 This porject uses the following technology stack:
 - JDK 11
@@ -33,49 +33,63 @@ This porject uses the following technology stack:
 - Docker
 - JUnit5
 
-## Install dependencies
+## Running the Application Container
+To jump start the application and try it out, build the Docker image and run the container as below.
+
+On the project root folder, build the image with (grab your coffee ☕, it may take some minutes to download all the dependencies and compile it):
+```shell script
+docker build -t quarkus/find-best-restaurant .
+```
+Then run the container using:
+```shell script
+docker run -i --rm -p 8080:8080 quarkus/find-best-restaurant
+```
+
+## Frontend Development
+### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+
+## Backend Development
+### Install dependencies
 
 Install maven dependencies first:
 ```shell script
 ./mvnw install
 ```
 
-## Running the application in dev mode
+### Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
 ```
 
-## Running test suite
+### Running test suite
 
 You can run the test suite using:
 ```shell script
 ./mvnw test
 ```
 
-## Packaging and running the application
+### Packaging and running the application
 
 The application can be packaged using:
 ```shell script
 ./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-## Building image and running container
-
-Before building the container image run:
-```shell script
-./mvnw package
-```
-Then, build the image with:
-```shell script
-docker build -f src/main/docker/Dockerfile -t quarkus/find-best-restaurant .
-```
-Then run the container using:
-```shell script
-docker run -i --rm -p 8080:8080 quarkus/find-best-restaurant
 ```
