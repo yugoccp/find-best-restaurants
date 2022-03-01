@@ -67,6 +67,26 @@
   <build>
     <plugins>
       <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.2.0</version>
+          <executions>
+            <execution>
+                <goals>
+                    <goal>copy-resources</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <outputDirectory>${project.build.outputDirectory}/META-INF/resources</outputDirectory>
+                  <resources>
+                      <resource>
+                          <directory>src/main/webapp/build</directory>
+                      </resource>
+                  </resources>
+                </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus.platform.version}</version>
