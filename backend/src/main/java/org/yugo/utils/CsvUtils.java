@@ -1,7 +1,6 @@
 package org.yugo.utils;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -44,10 +43,10 @@ public class CsvUtils {
     public List<String[]> getCsvData(String filePath) {
         List<String[]> csvData = Collections.emptyList();
     
-        InputStreamReader isr = new InputStreamReader(getClass().getResourceAsStream(filePath));
-        BufferedReader br = new BufferedReader(isr);
+        var inputStreamReader = new InputStreamReader(getClass().getResourceAsStream(filePath));
+        var bufferedReader = new BufferedReader(inputStreamReader);
 
-        try (CSVReader csvReader = new CSVReader(br)) {
+        try (CSVReader csvReader = new CSVReader(bufferedReader)) {
             csvData = csvReader.readAll();
         }
         catch (CsvException | IOException e) {
