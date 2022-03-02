@@ -14,8 +14,7 @@ import {
 import { SearchIcon } from '@chakra-ui/icons'
 import MobileSpinner from './components/MobileSpinner'
 import RestaurantItem from './components/RestaurantItem'
-import { ColorModeSwitcher } from './components/ColorModeSwitcher'
-import { getBestRestaurants } from "./api/restaurantService"
+import { getBestRestaurants } from './api/restaurantService'
 import { formatMoney, parseMoney } from './utils'
 import theme from './theme'
 
@@ -45,10 +44,11 @@ const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <ColorModeSwitcher />
       <Center>
-        <Box textAlign="center" fontSize="l" maxW={540}>
+        <Box textAlign='center' fontSize='l' p={7} m={7} borderRadius='md' maxW={640} minH={500} bg='yellow.50'>
+          
           <Heading size='lg' mb={5}>🍗🍟🍔 Find Best Restaurants 🍱🌮🍻</Heading>
+          
           <Grid p={3}>
             <VStack spacing={8}>
               <Input
@@ -91,15 +91,15 @@ const App = () => {
               </HStack>
 
               <Button rightIcon={<SearchIcon />} colorScheme='blue' onClick={searchRestaurants}>Search</Button>
-
             </VStack>
           </Grid>
+          
           <Grid 
               p={3} gap={2} 
               templateColumns='repeat(3 , 1fr)'>
             {
               restaurants.map(restaurant => 
-                <RestaurantItem {...restaurant} />
+                <RestaurantItem key={restaurant.name} {...restaurant} />
             )}
           </Grid>
         </Box>

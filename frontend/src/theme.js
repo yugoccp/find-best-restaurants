@@ -1,10 +1,17 @@
 import { extendTheme } from '@chakra-ui/react'
 
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
+const theme = {
+  styles: {
+    global: {
+      body: {
+        bg: 'red.400'
+      },
+    }
+  },
+  useSystemColorMode: true,
+  initialColorMode: 'light',
 }
 
-const theme = extendTheme({ config })
+const customTheme = extendTheme(theme)
 
-export default theme
+export default customTheme

@@ -3,7 +3,7 @@ import {
     Input,
     HStack,
     useNumberInput
-  } from '@chakra-ui/react';
+  } from '@chakra-ui/react'
 
 const MobileSpinner = props => {
     const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
